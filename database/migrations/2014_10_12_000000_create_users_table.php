@@ -19,6 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedInteger('role_id')->default(\App\Models\User::ROLE_EMPLOYEE);  // ← 追記 *********
+            $table->unsignedInteger('shop_id')->default(\App\Models\Shop::SHOP_ID_TOKYO);  // ← 追記 *********
             $table->string('memo')->nullable();  // ← 追記 *********
             $table->rememberToken();
             $table->timestamps();

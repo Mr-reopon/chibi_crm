@@ -19,6 +19,8 @@ class CreateRolesTable extends Migration
             $table->string('memo')->comment('備考');
             $table->timestamps();
         });
+        DB::table('roles')->insert(['id'=>1,'name'=>'sv','memo'=>'スーパーバイザー']);//追加してみたけどええんか？
+        DB::table('roles')->insert(['id'=>2,'name'=>'clerk','memo'=>'店員']);//追加してみたけどええんか？問題は解決せず
     }
 
     /**
